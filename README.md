@@ -35,15 +35,15 @@ sudo apt update && sudo apt install docker.io -y
 
 Built Dockerfile:
   
-  FROM nginx:alpine
-  
-  COPY . /usr/share/nginx/html
+    FROM nginx:alpine
+    
+    COPY . /usr/share/nginx/html
 
 Built and ran the container:
 
-  docker build -t amazon-ui-clone .
-  
-  docker run -d -p 80:80 amazon-ui-clone
+    docker build -t amazon-ui-clone .
+    
+    docker run -d -p 80:80 amazon-ui-clone
 
 ✅ Static site live
 
@@ -55,21 +55,21 @@ Built and ran the container:
 
 Installed Java:
 
-  sudo apt install openjdk-17-jdk -y\
+    sudo apt install openjdk-17-jdk -y\
 
 Added Jenkins repo & key, then installed Jenkins:
 
-  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-  
-  echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
-  
-  sudo apt update
-  
-  sudo apt install jenkins -y
-  
-  sudo systemctl start jenkins
-  
-  sudo systemctl enable jenkins
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    
+    echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+    
+    sudo apt update
+    
+    sudo apt install jenkins -y
+    
+    sudo systemctl start jenkins
+    
+    sudo systemctl enable jenkins
 
 🔴 Error encountered: GPG error: public key NO_PUBKEY 
 
@@ -92,15 +92,15 @@ Created a Pipeline job in Jenkins.
 
 Shell Build Step used:
 
-  docker stop $(docker ps -aq) || true
-  
-  docker rm $(docker ps -aq) || true
-  
-  docker rmi amazon-ui || true
-  
-  docker build -t amazon-ui .
-  
-  docker run -d -p 80:80 amazon-ui
+    docker stop $(docker ps -aq) || true
+    
+    docker rm $(docker ps -aq) || true
+    
+    docker rmi amazon-ui || true
+    
+    docker build -t amazon-ui .
+    
+    docker run -d -p 80:80 amazon-ui
 
 📸 Console output screenshot DEVOPS1.jpg shows successful container rollout.
 
@@ -134,8 +134,9 @@ project status page in
 1.Clone this repo on EC2 or local system.
 
 2.Build & run Docker container:
-  docker build -t amazon-ui .
-  docker run -d -p 80:80 amazon-ui
+
+    docker build -t amazon-ui .
+    docker run -d -p 80:80 amazon-ui
 
 3.Jenkins (if installed): configure webhook, then builds will auto-trigger and redeploy your static UI clone.
 
