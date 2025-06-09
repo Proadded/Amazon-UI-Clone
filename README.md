@@ -28,17 +28,20 @@ This repository documents the automated deployment of a static HTML/CSS Amazon U
 ## 🐋 2. Docker Installation & Static Site Container
 
 Installed Docker:
+
 sudo apt update && sudo apt install docker.io -y
 
 ![DEVOPS8](https://github.com/user-attachments/assets/90bb50e3-3afd-470d-a25f-5652e1e4100a)
 
 Built Dockerfile:
-FROM nginx:alpine
-COPY . /usr/share/nginx/html
+
+  FROM nginx:alpine
+  COPY . /usr/share/nginx/html
 
 Built and ran the container:
-docker build -t amazon-ui-clone .
-docker run -d -p 80:80 amazon-ui-clone
+
+  docker build -t amazon-ui-clone .
+  docker run -d -p 80:80 amazon-ui-clone
 
 ✅ Static site live
 
@@ -49,15 +52,17 @@ docker run -d -p 80:80 amazon-ui-clone
 ## 🛠️ 3. Jenkins Installation
 
 Installed Java:
-sudo apt install openjdk-17-jdk -y\
+
+  sudo apt install openjdk-17-jdk -y\
 
 Added Jenkins repo & key, then installed Jenkins:
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
-sudo apt update
-sudo apt install jenkins -y
-sudo systemctl start jenkins
-sudo systemctl enable jenkins
+
+  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+  echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+  sudo apt update
+  sudo apt install jenkins -y
+  sudo systemctl start jenkins
+  sudo systemctl enable jenkins
 
 🔴 Error encountered: GPG error: public key NO_PUBKEY 
 
@@ -74,15 +79,17 @@ sudo systemctl enable jenkins
 ## 🔄 4. Jenkins CI/CD Pipeline Configuration
 
 Created a Pipeline job in Jenkins.
-Enabled GitHub Project and entered repo URL.
-Configured Build Triggers: GitHub webhooks + Poll SCM.
+
+  Enabled GitHub Project and entered repo URL.
+  Configured Build Triggers: GitHub webhooks + Poll SCM.
 
 Shell Build Step used:
-docker stop $(docker ps -aq) || true
-docker rm $(docker ps -aq) || true
-docker rmi amazon-ui || true
-docker build -t amazon-ui .
-docker run -d -p 80:80 amazon-ui
+
+  docker stop $(docker ps -aq) || true
+  docker rm $(docker ps -aq) || true
+  docker rmi amazon-ui || true
+  docker build -t amazon-ui .
+  docker run -d -p 80:80 amazon-ui
 
 📸 Console output screenshot DEVOPS1.jpg shows successful container rollout.
 
