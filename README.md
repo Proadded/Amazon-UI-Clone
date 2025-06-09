@@ -26,6 +26,7 @@ This repository documents the automated deployment of a static HTML/CSS Amazon U
 ---
 
 ## 🐋 2. Docker Installation & Static Site Container
+
 Installed Docker:
 sudo apt update && sudo apt install docker.io -y
 
@@ -40,11 +41,13 @@ docker build -t amazon-ui-clone .
 docker run -d -p 80:80 amazon-ui-clone
 
 ✅ Static site live
+
 ![DEVOPS5](https://github.com/user-attachments/assets/052db86a-f6ef-46f1-a391-aad773c39e8f)
 
 ---
 
 ## 🛠️ 3. Jenkins Installation
+
 Installed Java:
 sudo apt install openjdk-17-jdk -y\
 
@@ -57,15 +60,19 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 
 🔴 Error encountered: GPG error: public key NO_PUBKEY 
+
 ![DEVOPS9](https://github.com/user-attachments/assets/76efcb1d-e0fa-4902-aad6-2b07cd6e7bf7)
+
 — resolved by fetching and adding the Jenkins repo key manually before install.
 
 ✅ Installation succeeded 
+
 ![DEVOPS10](https://github.com/user-attachments/assets/3308ae00-7572-4b8b-8178-70afec36600f)
 
 ---
 
 ## 🔄 4. Jenkins CI/CD Pipeline Configuration
+
 Created a Pipeline job in Jenkins.
 Enabled GitHub Project and entered repo URL.
 Configured Build Triggers: GitHub webhooks + Poll SCM.
@@ -80,12 +87,16 @@ docker run -d -p 80:80 amazon-ui
 📸 Console output screenshot DEVOPS1.jpg shows successful container rollout.
 
 🧩 UI of Jenkins build step configuration in 
+
 ![DEVOPS3](https://github.com/user-attachments/assets/912d5657-5841-4131-84d0-72beacf566df)
 
 
 ✅ Build #4 success screenshot
+
 ![DEVOPS2](https://github.com/user-attachments/assets/225cf25d-a765-4975-a4de-5680f40fd66b)
+
 project status page in 
+
 ![DEVOPS4](https://github.com/user-attachments/assets/00284dec-6dd6-4a47-b0d9-477682e598c5)
 
 ---
