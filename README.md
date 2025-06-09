@@ -1,24 +1,22 @@
-# myamazon - Amazon Clone
+# 🚀 Amazon UI Clone Deployment with AWS EC2, Docker & Jenkins
+
+This repository documents the automated deployment of a static HTML/CSS Amazon UI clone using AWS EC2, Docker and Jenkins CI/CD.
 
 ---
-<img src="https://github.com/Ninja-Vikash/asset-cloud/blob/main/icon%20%26%20png/amazon.png" height="50px" align="left">
-myamazon is a clone of the popular e-commerce platform Amazon. It is built using HTML and CSS to replicate the style of the original webpage. The project is designed to be fully responsive.
+
+## 📋 What You’ll Find in This README
+1. EC2 setup & SSH access
+2. Docker installation & container setup
+3. Jenkins installation from official repository
+4. CI/CD pipeline configuration screenshots
+5. Errors encountered and fixes applied
 
 ---
 
-## Preview
+## 🧠 1. EC2 Setup & SSH Access
 
-![myamazon Preview](https://github.com/Ninja-Vikash/asset-cloud/blob/main/myAmazon/amazonclone.png)
+- EC2 instance launched with Ubuntu 22.04, `t2.micro` type, Elastic IP assigned.
+- SSH access tested via MINGW64/Git Bash:
+  ```bash
+  ssh -i "C:/Users/Aditya/Desktop/aditya-key.pem" ubuntu@<ec2-ip>
 
-## Features
-
-- Responsive design
-- HTML and CSS only
-- Similar styling to Amazon
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Ninja-Vikash/myamazon.git
