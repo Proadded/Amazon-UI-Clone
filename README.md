@@ -25,7 +25,7 @@ This repository documents the automated deployment of a static HTML/CSS Amazon U
 
 ---
 
-🐋 2. Docker Installation & Static Site Container
+## 🐋 2. Docker Installation & Static Site Container
 Installed Docker:
 sudo apt update && sudo apt install docker.io -y
 
@@ -44,7 +44,7 @@ docker run -d -p 80:80 amazon-ui-clone
 
 ---
 
-🛠️ 3. Jenkins Installation
+## 🛠️ 3. Jenkins Installation
 Installed Java:
 sudo apt install openjdk-17-jdk -y\
 
@@ -65,7 +65,7 @@ sudo systemctl enable jenkins
 
 ---
 
-🔄 4. Jenkins CI/CD Pipeline Configuration
+## 🔄 4. Jenkins CI/CD Pipeline Configuration
 Created a Pipeline job in Jenkins.
 Enabled GitHub Project and entered repo URL.
 Configured Build Triggers: GitHub webhooks + Poll SCM.
@@ -90,7 +90,7 @@ project status page in
 
 ---
 
-⚠️ 5. Common Errors & Fixes
+## ⚠️ 5. Common Errors & Fixes
 | Issue                            | Description & Fix                                  |
 | -------------------------------- | -------------------------------------------------- |
 | **PEM path errors**              | Used `chmod 400` and corrected path in Git Bash    |
@@ -100,7 +100,7 @@ project status page in
 
 ---
 
-👇 6. How to Use
+## 👇 6. How to Use
 
 1.Clone this repo on EC2 or local system.
 
@@ -111,7 +111,7 @@ project status page in
 3.Jenkins (if installed): configure webhook, then builds will auto-trigger and redeploy your static UI clone.
 
 
-👨‍💻 Author
-Aditya Verma
+## 👨‍💻 Author
+## Aditya Verma
 
 
